@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const computerScoreSpan = document.querySelector('.computerScore p:nth-child(2)');
     const computerChoiceImage = document.querySelector('.computerChoice img');
     const computerChoiceCaption = document.querySelector('.computerChoice figcaption');
+    const result = document.querySelector('.result p strong');
     const choices = ['rock', 'paper', 'scissors'];
 
     let playerScore = 0;
@@ -37,6 +38,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    const updateResult = (winner) => {
+        if (winner == 'computer'){
+            result.textContent = "Computer won this round XD";
+        }
+        if (winner == 'player'){
+            result.textContent = "You won this round (must be some bug)";
+        }
+        if (winner == 'draw'){
+            result.textContent = "It's a draw (lucky you)";
+        }
+    }
+
     const updateComputerChoice = (choice) => {
         computerChoiceImage.src = `/Rock-paper-scissors/content/images/${choice}.png`;
         computerChoiceCaption.textContent = choice.charAt(0).toUpperCase() + choice.slice(1);
@@ -68,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 updateComputerChoice(computerChoice);
                 const winner = determineWinner(playerChoice, computerChoice);
                 updateScoreboard(winner);
+                updateResult(winner);
             }); // Pass the end of cycle behavior as a callback function
         });
     });
