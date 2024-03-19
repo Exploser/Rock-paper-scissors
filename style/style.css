@@ -1,0 +1,64 @@
+.madimi-one-regular {
+    font-family: "Madimi One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    outline: 5px solid black;
+}
+
+p {
+    font-family: monospace;
+    font-size: larger;
+}
+
+header {
+    background-color: black;
+
+    .titleText {
+        color: white;
+        display: flex;
+        justify-content: space-evenly;
+        font-family: "Madimi One";
+        font-size: 7dvw;
+    }
+
+    .description {
+
+    color: white;
+        display: flex;
+        justify-content: center;
+    }
+}
+content{
+    display: flex;
+    flex-direction: column;
+    p{
+        text-align: center;
+    }
+    .game{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: center;
+    
+        .player{
+            img {
+                max-width: 20dvw;
+            }
+        }
+         
+    }
+    
+    .computer{
+        display: flex;
+        align-items: center;
+        img{
+            max-width: 50dvw;
+        }
+    }
+    
+}
+
