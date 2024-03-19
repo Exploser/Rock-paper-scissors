@@ -75,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             cycling = true;
             const playerChoice = e.currentTarget.classList[0].slice(3).toLowerCase();
+            result.textContent = "Computer is making a choice......"
 
             cycleImages(() => {
                 const computerChoice = getComputerChoice();
