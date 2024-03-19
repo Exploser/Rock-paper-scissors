@@ -4,11 +4,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const computerScoreSpan = document.querySelector('.computerScore p:nth-child(2)');
     const computerChoiceImage = document.querySelector('.computerChoice img');
     const computerChoiceCaption = document.querySelector('.computerChoice figcaption');
-
     const choices = ['rock', 'paper', 'scissors'];
 
     let playerScore = 0;
     let computerScore = 0;
+    let cycling = false;
+
+    let stopAfterMS = 1000;
+    let cycleEveryMS = 100;
 
     const getComputerChoice = () => choices[Math.floor(Math.random() * choices.length)];
 
@@ -39,14 +42,33 @@ document.addEventListener('DOMContentLoaded', () => {
         computerChoiceCaption.textContent = choice.charAt(0).toUpperCase() + choice.slice(1);
     };
 
+    const cycleImages = (callback) => {
+        let counter = 0;
+        const intervalId = setInterval(() => {
+            updateComputerChoice(choices[counter % choices.length]);
+            counter++;
+        }, cycleEveryMS); 
+
+        setTimeout(() => {
+            clearInterval(intervalId);
+            cycling = false;
+            callback();
+        }, stopAfterMS); // Stop cycling after 3 seconds
+    };
+
     document.querySelectorAll('.player figure').forEach(figure => {
         figure.addEventListener('click', (e) => {
-            const playerChoice = e.currentTarget.classList[0].slice(3).toLowerCase();
-            const computerChoice = getComputerChoice();
-            updateComputerChoice(computerChoice);
+            if (cycling) return; // If already cycling, ignore the click
 
-            const winner = determineWinner(playerChoice, computerChoice);
-            updateScoreboard(winner);
+            cycling = true;
+            const playerChoice = e.currentTarget.classList[0].slice(3).toLowerCase();
+
+            cycleImages(() => {
+                const computerChoice = getComputerChoice();
+                updateComputerChoice(computerChoice);
+                const winner = determineWinner(playerChoice, computerChoice);
+                updateScoreboard(winner);
+            }); // Pass the end of cycle behavior as a callback function
         });
     });
 
