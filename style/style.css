@@ -27,38 +27,41 @@ header {
 
     .description {
 
-    color: white;
+        color: white;
         display: flex;
         justify-content: center;
     }
 }
-content{
+
+content {
     display: flex;
     flex-direction: column;
-    p{
+
+    p {
         text-align: center;
     }
-    .game{
+
+    .game {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         text-align: center;
-    
-        .player{
+
+        .player {
             img {
                 max-width: 20dvw;
             }
         }
-         
+
     }
-    
-    .computer{
+
+    .computer {
         display: flex;
         align-items: center;
-        img{
+
+        img {
             max-width: 50dvw;
         }
     }
-    
-}
 
+}
