@@ -11,10 +11,11 @@
 
 p, figcaption{
     font-family: monospace;
-    font-size: 2dvw;
+    font-size: 2dvh;
 }
 
 body{
+    margin: 0;
     background-color: #E8D0B8;
 }
 
@@ -54,6 +55,7 @@ content {
         text-align: center;
     }
     .scoreboard{
+        margin: 5dvh;
         display: flex;
         flex-direction: column;
         background-color: #413334;
@@ -65,7 +67,7 @@ content {
 
         .score{
             background-color: #B09268;
-            padding: 3dvw;
+            padding: 1dvw;
             display: flex;
             justify-content: space-between;
         }
@@ -74,11 +76,11 @@ content {
         strong{
             text-align: center;
             vertical-align: middle;
-            font-size: 8dvw;
+            font-size: 8dvh;
             color: #A9A7A8;
         }
         p{
-            margin: 5px;
+            margin: 1dvh;
             text-align: center;
             vertical-align: middle;
             font-size: 100px;
@@ -91,6 +93,7 @@ content {
     }
 
     .game {
+        margin: 5dvh;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -98,7 +101,10 @@ content {
 
         .player {
             img {
-                max-width: 20dvw;
+                max-width: 10dvh;
+            }
+            img:hover{
+                scale: 1.2;
             }
         }
 
@@ -111,7 +117,7 @@ content {
         align-items: center;
 
         img {
-            max-width: 50dvw;
+            max-width: 40dvh;
         }
     }
 
