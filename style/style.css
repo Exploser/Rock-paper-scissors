@@ -6,28 +6,41 @@
 
 * {
     box-sizing: border-box;
-    outline: 5px solid black;
+    /* outline: 1px solid black; */
 }
 
-p {
+p, figcaption{
     font-family: monospace;
-    font-size: larger;
+    font-size: 2dvw;
+}
+
+body{
+    background-color: #E8D0B8;
 }
 
 header {
-    background-color: black;
+    /* background-color: #EAC38B; */
+    color: #413334;
 
     .titleText {
-        color: white;
         display: flex;
         justify-content: space-evenly;
+        -webkit-text-stroke-width: 3px;
+        -webkit-text-stroke-color: #413334;
         font-family: "Madimi One";
         font-size: 7dvw;
+        .titleRock {
+            color: #A9A7A8;
+        }
+        .titlePaper{
+            color: #E3E0E2;
+        }
+        .titleScissors{
+            color: white;
+        }
     }
 
     .description {
-
-        color: white;
         display: flex;
         justify-content: center;
     }
@@ -39,6 +52,42 @@ content {
 
     p {
         text-align: center;
+    }
+    .scoreboard{
+        display: flex;
+        flex-direction: column;
+        background-color: #413334;
+
+        .scoreTag{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .score{
+            background-color: #B09268;
+            padding: 3dvw;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+
+        strong{
+            text-align: center;
+            vertical-align: middle;
+            font-size: 8dvw;
+            color: #A9A7A8;
+        }
+        p{
+            margin: 5px;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 100px;
+        }
+        i{
+            text-align: center;
+            vertical-align: middle;
+            font-size: 50px;
+        }
     }
 
     .game {
@@ -57,6 +106,8 @@ content {
 
     .computer {
         display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         align-items: center;
 
         img {
