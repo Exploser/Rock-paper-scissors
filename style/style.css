@@ -130,10 +130,25 @@ content {
         text-align: center;
 
         .player {
+
             p{
                 margin: 0px;
                 font-size: clamp(10px, 5vw, 100px);
             }
+
+            @media (max-width:1000px) {
+                .playerOptions{
+                    display: flex;
+                    flex-direction: column;
+                    max-width: 50vw;
+                } 
+            }
+
+            .playerOptions{
+                display: flex;
+                max-width: 50vw;
+            }
+            
 
             figure{
                 margin: 0;
