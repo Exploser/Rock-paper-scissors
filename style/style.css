@@ -9,12 +9,13 @@
     /* outline: 1px solid black; */
 }
 
-p, figcaption{
+p,
+figcaption {
     font-family: monospace;
-    font-size: 2dvh;
+    font-size: 35px;
 }
 
-body{
+body {
     margin: 0;
     background-color: #E8D0B8;
 }
@@ -26,24 +27,42 @@ header {
     .titleText {
         display: flex;
         justify-content: space-evenly;
-        -webkit-text-stroke-width: 3px;
-        -webkit-text-stroke-color: #413334;
-        font-family: "Madimi One";
-        font-size: 7dvw;
+
+        p {
+            margin: clamp(1%,5%,10%);
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: #413334;
+            font-family: "Madimi One";
+            font-size: clamp(10px, 10vw, 150px);
+        }
+
         .titleRock {
             color: #A9A7A8;
         }
-        .titlePaper{
+
+        .titleRock:hover {
+            background-image: url("/Rock-paper-scissors/content/images/rockBG.png");
+
+        }
+
+        .titlePaper {
             color: #E3E0E2;
         }
-        .titleScissors{
+
+        .titleScissors {
             color: white;
         }
     }
 
     .description {
+        margin: clamp(1px,5px,10px);
         display: flex;
         justify-content: center;
+        p{
+            text-align: center;
+            font-size: clamp(20px,3dvw,100px);
+        }
+        
     }
 }
 
@@ -54,71 +73,96 @@ content {
     p {
         text-align: center;
     }
-    .scoreboard{
-        margin: 5dvh;
+
+    .scoreboard {
+        margin: clamp(1px,20px,100px);
         display: flex;
         flex-direction: column;
         background-color: #413334;
 
-        .scoreTag{
+        .scoreTag {
             display: flex;
             justify-content: space-between;
         }
 
-        .score{
+        .score {
             background-color: #B09268;
-            padding: 1dvw;
+            padding: clamp(1%,5%,10%);
             display: flex;
             justify-content: space-between;
         }
-        
 
-        strong{
+
+        strong {
             text-align: center;
             vertical-align: middle;
-            font-size: 8dvh;
+            font-size: clamp(20px,10dvw,100px);
             color: #A9A7A8;
         }
-        p{
-            margin: 1dvh;
+
+        p {
+            margin: clamp(1%,1%,5%);
             text-align: center;
             vertical-align: middle;
-            font-size: 100px;
+            font-size: clamp(10px, 10vw, 100px);
         }
-        i{
+
+        i {
             text-align: center;
             vertical-align: middle;
-            font-size: 50px;
+            font-size: clamp(10px, 5vw, 100px);
         }
     }
 
+    .result {
+        margin: 0px;
+        p {
+            font-size: clamp(10px, 3vw, 100px);
+        }
+        
+    }
+
     .game {
-        margin: 5dvh;
+        margin: clamp(2%,5%,5%);
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         text-align: center;
 
         .player {
-            img {
-                max-width: 10dvh;
+            p{
+                margin: 0px;
+                font-size: clamp(10px, 5vw, 100px);
             }
-            img:hover{
+
+            figure{
+                margin: 0;
+            }
+            img {
+                max-width: clamp(100px,20vw,300px);
+                /* max-height: 50%; */
+            }
+
+            img:hover {
                 scale: 1.2;
             }
         }
-
-    }
-
-    .computer {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-
-        img {
-            max-width: 40dvh;
+        .computer {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+    
+            p {
+                margin: 0px;
+                font-size: clamp(10px, 5vw, 100px);
+                vertical-align: top;
+            }
+    
+            img {
+                justify-self: baseline;
+                max-width: clamp(150px,40vw,1000px);
+            }
         }
     }
-
 }
