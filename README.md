@@ -2,6 +2,8 @@
 
 Welcome to the Rock-Paper-Scissors game, a simple and fun website where you can play the classic game against a computer! This project is designed to provide a delightful break in your day with a bit of nostalgic gameplay. All of the charming artwork you see in the game has been hand-drawn by me, bringing a personal touch to this digital experience.
 
+![image](https://github.com/Exploser/Rock-paper-scissors/assets/126280113/ee7eca63-4501-4377-a595-00a74044c001)
+
 ## How to Play
 
 Playing is easy! Visit my website, and you'll be presented with three options:
